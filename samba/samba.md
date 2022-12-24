@@ -50,7 +50,7 @@ Antes de continuar, certifique-se de ter cumprido os passos descritos no arquivo
             gateway4: <ip-da-vm-gw-ens192>
         version: 2
     ```
-    Lembre de aplicar as configurações e conferir se o ip aparece e teste-o com o ping:
+    Lembre de aplicar as configurações, conferir se o ip aparece e testar o ping:
 
     ```bash
     sudo netplan apply
@@ -60,7 +60,7 @@ Antes de continuar, certifique-se de ter cumprido os passos descritos no arquivo
 
 3. ## Instalar e configurar o Samba
 
-    Caso já esteja na vm do samba prossiga, caso não, conecte-se a vm:
+    Caso já esteja na vm do samba prossiga, caso não, conecte-se à vm:
     ```bash
     ssh administrador@<ip-da-vm-samba-ens160>
     ```
