@@ -15,7 +15,7 @@ O primeiro passo para a configuração, é habilitar o firewall.
 
    ```
 
-2. Habilite o ssh:
+2. Habilite o firewall:
 
    ```bash
    sudo ufw enable
@@ -110,7 +110,7 @@ O primeiro passo para a configuração, é habilitar o firewall.
    sudo chmod 755 /etc/rc.local
    ```
 
-3. Reinicie a máquina, para que o arquivo execute o script:
+3. Reinicie a máquina para que o arquivo execute o script:
 
    ```bash
    sudo reboot
@@ -146,3 +146,9 @@ network:
       gateway4: 192.168.13.41
   version: 2
 ```
+
+---
+
+## Conclusão
+
+Parabéns! Se tudo ocorreu como o planejado, a sua máquina já está desempenhando a função de gateway!
