@@ -59,31 +59,6 @@ network:
     ens160:
       dhcp4: false
       addresses: [<endereço WAN da máquina>/<máscara>]
-      nameservers:
-         addresses: [<lista de endereços de nameserver>]
-         search: [<domínio>]
-    ens192:
-      dhcp4: false
-      addresses: [<endereço LAN da máquina>/<máscara>]
-      gateway4: <endereço do gateway da rede LAN>
-      #nameservers:
-      #   addresses:
-      #     -
-      #     -
-      #   search: []
-  version: 2
-```
-
-**ATENÇÃO!**: Na máquina que será o gateway da rede LAN, o campo `gateway4` deverá ficar na interface `ens160` e como IP o do gateway da rede WAN. Dessa forma:
-
-```
-# This is the network config written by 'subiquity'
-network:
-  renderer: networkd
-  ethernets:
-    ens160:
-      dhcp4: false
-      addresses: [<endereço WAN da máquina>/<máscara>]
       gateway4: <endereço do gateway da rede WAN>
       nameservers:
          addresses: [<lista de endereços de nameserver>]

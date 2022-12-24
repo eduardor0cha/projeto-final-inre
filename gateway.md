@@ -137,9 +137,7 @@ network:
       dhcp4: false
       addresses: [10.9.13.108/24]
       nameservers:
-         addresses:
-           - 10.9.13.110
-           - 10.9.13.112
+         addresses: [10.9.13.110, 10.9.13.112]
     ens192:
       dhcp4: false
       addresses: [192.168.13.42/28]
