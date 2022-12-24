@@ -1,4 +1,4 @@
-# Configruação do servidor gateway
+# Configuração do servidor gateway
 
 Antes de continuar, certifique-se de ter cumprido os passos descritos no arquivo [README.md](https://github.com/eduardor0cha/projeto-final-inre/blob/main/README.md)
 
