@@ -129,6 +129,6 @@ sudo hostnamectl set-hostname <fqdn>
 A depender da função designada para cada máquina, siga o tutorial de configuração adequado:
 
 - [Gateway](https://github.com/eduardor0cha/projeto-final-inre/blob/main/gateway.md)
-- [SAMBA](https://github.com/eduardor0cha/projeto-final-inre/blob/main/samba/samba.md)
+- [SAMBA](https://github.com/eduardor0cha/projeto-final-inre/blob/main/samba.md)
 - [Nameserver 1]()
 - [Nameserver 2]()
