@@ -192,10 +192,10 @@ Antes de continuar, certifique-se de ter cumprido os passos descritos no arquivo
     Em um computador Windows abra o Explorador de arquivos, clique com o botão direito em "Mapear unidade"e digite: `\\<ip-da-vm-samba-ens160>\public` ;
     Exemplo: `\\10.9.13.106\public`.
 
-    ![](Mapear-unidade.png)
-    ![](Endereço-pasta.png)
-    ![](Login-usuário.png)
-    ![](Pasta-acessada.png)
+    ![](img/Mapear-unidade.png)
+    ![](img/Endereço-pasta.png)
+    ![](img/Login-usuário.png)
+    ![](img/Pasta-acessada.png)
 
 ## Conclusão
 
