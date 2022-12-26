@@ -24,6 +24,8 @@ Antes de continuar, certifique-se de ter cumprido os passos descritos no arquivo
  $ sudo mkdir /etc/bind/zones
 ```
 
+---
+
 ### Criação das zonas
 
 * Crie a zona direta, modificiando o domínio grupox.turma913.ifalara.local de acordo com o grupo pertencente:
@@ -38,7 +40,9 @@ Antes de continuar, certifique-se de ter cumprido os passos descritos no arquivo
  $ sudo cp /etc/bind/db.127 /etc/bind/zones/db.10.9.13.rev
 ```
 
-## Configuração das zonas
+---
+
+### Configuração das zonas
 
 * Configure a zona direta db.grupox.turma913.ifalara.local , de acordo com as informações do seu domínio:
 
