@@ -109,3 +109,33 @@ $TTL    604800
 
 ---
 
+* Para informar onde os arquivos foram salvos, edite o named.conf.local: 
+
+```bash
+    $ sudo nano /etc/bind/named.conf.local
+```
+_Adicione as duas zonas, e edite-as de acordo com os domínios dispostos, como no exemplo a seguir:_
+
+```
+//
+// Do any local configuration here
+//
+
+// Consider adding the 1918 zones here, if they are not used in your
+// organization
+//include "/etc/bind/zones.rfc1918";
+
+zone "grupo3.turma913.ifalara.local" {
+	type master;
+	file "/etc/bind/zones/db.grupo3.turma913.ifalara.local";
+	allow-transfer{ 10.9.13.112; };  
+	allow-query{any;};
+};
+
+zone "13.9.10.in-addr.arpa" IN {
+	type master;
+	file "/etc/bind/zones/db.10.9.13.rev";
+	allow-transfer{ 10.9.14.112; };
+};
+
+```
