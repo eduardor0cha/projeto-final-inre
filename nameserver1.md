@@ -167,7 +167,9 @@ zone 13.9.10.in-addr.arpa/IN: loaded serial 1
 
 ```bash
     $sudo nano /etc/default/named
-    
+ ```
+
+```bash
     # run resolvconf?
 RESOLVCONF=no
 
