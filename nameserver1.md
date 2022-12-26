@@ -34,6 +34,8 @@ Antes de continuar, certifique-se de ter cumprido os passos descritos no arquivo
  $ sudo cp /etc/bind/db.empty /etc/bind/zones/db.grupox.turma913.ifalara.local
 ```
 
+
+
 * Realize a criação da zona reversa, inserindo a zona reversa da rede 10.9.13: 
 
 ```bash
@@ -208,6 +210,27 @@ OPTIONS="-4 -u bind"
                 search: [grupox.turma913.ifalara.local] # domínio
     version: 2
  ```
- 
 
+---
+
+### Testes Finais
+
+* Execute o comando a seguir, e verifique se os DNs estão corretos:
+
+```bash
+    $ systemd-resolve --status enp0s3
+ ```
  
+ * Se corretos, realize, por fim, o comando dig para as máquinas e os endereços respectivos do NS1 e NS2, como nos comandos a seguir:
+ 
+ ```bash
+    $ dig ns1.grupox.turma913.ifalara.local
+ ```
+ 
+  ```bash
+    $ $ dig -x 10.9.13.11
+ ```
+
+---
+
+Pronto! Você concluiu a instalação e configuração do DNS Master.
