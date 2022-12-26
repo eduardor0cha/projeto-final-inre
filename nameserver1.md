@@ -78,8 +78,31 @@ samba.grupox.turma913.ifalara.local.	  IN 	A	10.9.13.1
 
 ```
 
-* Configure a zona inversa, atentando-se aos mesmos detalhes, utilizando o seguinte comando:
+* Configure a zona reversa, atentando-se aos mesmos detalhes, utilizando o seguinte comando:
 
 ```bash
     $ sudo nano db.10.9.13.rev
+```
+
+```
+;
+; BIND reverse data file of reverse zone for local area network 10.9.14.0/24
+;
+$TTL    604800
+@       IN      SOA     grupox.turma913.ifalara.local. root.grupox.turma913.ifalara.local. (
+                              2022122900         ; Serial
+                         604800         ; Refresh
+                          86400         ; Retry
+                        2419200         ; Expire
+                         604800 )       ; Negative Cache TTL
+
+; name servers
+@      IN      NS      ns1.grupox.turma913.ifalara.local.
+@      IN      NS      ns2.local.
+
+; PTR Records
+10   IN      PTR     ns1.labredes.ifalarapiraca.local.              ; 10.9.14.10
+11   IN      PTR     ns2.labredes.ifalarapiraca.local.              ; 10.9.14.11
+100  IN      PTR     dh1.labredes.ifalarapiraca.local.    	    ; 10.9.14.100
+1    IN      PTR     gw.labredes.ifalarapiraca.local.               ; 10.9.14.1
 ```
