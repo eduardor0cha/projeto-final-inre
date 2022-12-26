@@ -130,5 +130,5 @@ A depender da função designada para cada máquina, siga o tutorial de configur
 
 - [Gateway](https://github.com/eduardor0cha/projeto-final-inre/blob/main/gateway.md)
 - [SAMBA](https://github.com/eduardor0cha/projeto-final-inre/blob/main/samba.md)
-- [Nameserver 1]()
+- [Nameserver 1](https://github.com/eduardor0cha/projeto-final-inre/blob/main/nameserver1.md)
 - [Nameserver 2](https://github.com/eduardor0cha/projeto-final-inre/blob/main/nameserver2.md)
