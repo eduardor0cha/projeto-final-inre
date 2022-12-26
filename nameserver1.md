@@ -10,4 +10,12 @@ Antes de continuar, certifique-se de ter cumprido os passos descritos no arquivo
 
 ```bash
  $ sudo apt-get install bind9 dnsutils bind9-doc 
-```$ 
+```
+
+* Agora, verifique se o serviço está ativo:
+
+```bash
+ $ sudo systemctl status bind9
+```
+
+
