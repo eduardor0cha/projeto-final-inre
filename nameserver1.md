@@ -24,6 +24,8 @@ Antes de continuar, certifique-se de ter cumprido os passos descritos no arquivo
  $ sudo mkdir /etc/bind/zones
 ```
 
+### Criação das zonas
+
 * Crie a zona direta, modificiando o domínio grupox.turma913.ifalara.local de acordo com o grupo pertencente:
 
 ```bash
