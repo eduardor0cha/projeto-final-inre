@@ -144,7 +144,7 @@ zone "13.9.10.in-addr.arpa" IN {
 
 ## Checagem 
 
-*  Uma vez editados, cheque, agora, cada um dos arquivos, através, respectivamente, dos seguintes comandos:
+*  Uma vez editados, cheque, agora, a sintaxe cada um dos arquivos, através, respectivamente, dos seguintes comandos:
 
 ```bash
     $sudo named-checkconf
@@ -159,4 +159,18 @@ zone grupox.turma913.ifalara.local/IN: loaded serial 1
 $ sudo named-checkzone 13.9.10.in-addr.arpa db.10.9.13.rev
 zone 13.9.10.in-addr.arpa/IN: loaded serial 1
 
+```
+
+---
+
+* Agora, vamos editar os endereços. Para isso, edite o diretório /etc/default/named, e acrescente, no final, a linha _OPTONS= -4 -u bind_
+
+```bash
+    $sudo nano /etc/default/named
+    
+    # run resolvconf?
+RESOLVCONF=no
+
+# startup options for the server
+OPTIONS="-4 -u bind"
 ```
