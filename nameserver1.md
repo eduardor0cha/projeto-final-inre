@@ -98,11 +98,14 @@ $TTL    604800
 
 ; name servers
 @      IN      NS      ns1.grupox.turma913.ifalara.local.
-@      IN      NS      ns2.local.
+@      IN      NS      ns2.grupox.turma913.ifalara.local.
 
 ; PTR Records
-10   IN      PTR     ns1.labredes.ifalarapiraca.local.              ; 10.9.14.10
-11   IN      PTR     ns2.labredes.ifalarapiraca.local.              ; 10.9.14.11
-100  IN      PTR     dh1.labredes.ifalarapiraca.local.    	    ; 10.9.14.100
-1    IN      PTR     gw.labredes.ifalarapiraca.local.               ; 10.9.14.1
+10   IN      PTR     ns1.grupox.turma913.ifalara.local.              ; 10.9.13.10
+11   IN      PTR     ns2.grupox.turma913.ifalara.local.              ; 10.9.13.11
+100  IN      PTR     dh1.grupox.turma913.ifalara.local.    	     ; 10.9.13.100
+1    IN      PTR     gw.grupox.turma913.ifalara.local.               ; 10.9.13.1
 ```
+
+---
+
