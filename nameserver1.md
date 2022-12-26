@@ -139,3 +139,24 @@ zone "13.9.10.in-addr.arpa" IN {
 };
 
 ```
+
+---
+
+## Checagem 
+
+*  Uma vez editados, cheque, agora, cada um dos arquivos, através, respectivamente, dos seguintes comandos:
+
+```bash
+    $sudo named-checkconf
+```
+
+```bash
+    $ cd /etc/bind/zones
+    
+$ sudo named-checkzone grupox.turma913.ifalara.local db.grupox.turma913.ifalara.local
+zone grupox.turma913.ifalara.local/IN: loaded serial 1
+
+$ sudo named-checkzone 13.9.10.in-addr.arpa db.10.9.13.rev
+zone 13.9.10.in-addr.arpa/IN: loaded serial 1
+
+```
