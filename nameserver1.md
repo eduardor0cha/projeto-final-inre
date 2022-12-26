@@ -49,3 +49,28 @@ Antes de continuar, certifique-se de ter cumprido os passos descritos no arquivo
 ```bash
     $ sudo nano db.labredes.ifalarapiraca.local 
 ```
+
+* A configuração deve se assemelhar com o seguinte formato, fazendo valer as respectivas mudanças e inserções de cada domínio:
+
+```
+;
+; BIND data file for internal network
+;
+$ORIGIN grupox.turma913.ifalara.local.
+$TTL	3h
+@	IN	SOA	ns1.grupox.turma913.ifalara.local. root.grupox.turma913.ifalara.local. (
+			      1		; Serial
+			      3h	; Refresh
+			      1h	; Retry
+			      1w	; Expire
+			      1h )	; Negative Cache TTL
+;nameservers
+@	IN	NS	ns1.labredes.ifalarapiraca.local.
+@	IN	NS	ns2.labredes.ifalarapiraca.local.
+;hosts
+ns1.grupox.turma913.ifalara.local.	  IN	A	10.9.14.10
+ns2.labredes.ifalarapiraca.local.	  IN	A	10.9.14.11
+dh1.labredes.ifalarapiraca.local.	  IN	A	10.9.14.100
+gw.labredes.ifalarapiraca.local.	  IN 	A	10.9.14.1          
+desktophost1    CNAME     dh1                 ; CNAME é um apelido
+```
