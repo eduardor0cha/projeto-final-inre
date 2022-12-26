@@ -2,7 +2,7 @@
 
 Antes de continuar, certifique-se de ter cumprido os passos descritos no arquivo [README.md](https://github.com/eduardor0cha/projeto-final-inre/blob/main/README.md)
 
---
+---
 
 ## Configuração e instalação do servidor DNS Master
 
@@ -24,7 +24,7 @@ Antes de continuar, certifique-se de ter cumprido os passos descritos no arquivo
  $ sudo mkdir /etc/bind/zones
 ```
 
---
+---
 
 ### Criação das zonas
 
