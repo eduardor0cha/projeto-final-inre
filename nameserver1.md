@@ -51,6 +51,7 @@ Antes de continuar, certifique-se de ter cumprido os passos descritos no arquivo
 ```
 
 * A configuração deve se assemelhar com o seguinte formato, fazendo valer as respectivas mudanças e inserções de cada domínio:
+_Certifique-se de alterar o valor de serial para a data no formato ano-mês-dia, acrescida de dois dígitos 0 no final, além de mudar os endereços e os nomes de acordo com cada valor correspondente ao ENS160._
 
 ```
 ;
@@ -68,9 +69,11 @@ $TTL	3h
 @	IN	NS	ns1.grupox.turma913.ifalara.local.
 @	IN	NS	ns2.grupox.turma913.ifalara.local.
 ;hosts
-ns1.grupox.turma913.ifalara.local.	  IN	A	10.9.14.10
-ns2.grupox.turma913.ifalara.local.	  IN	A	10.9.14.11
-dh1.grupox.turma913.ifalara.local.	  IN	A	10.9.14.100
-gw.grupox.turma913.ifalara.local.	  IN 	A	10.9.14.1          
-desktophost1    CNAME     dh1                 ; CNAME é um apelido
+ns1.grupox.turma913.ifalara.local.	  IN	A	10.9.13.10
+ns2.grupox.turma913.ifalara.local.	  IN	A	10.9.13.11
+gw.grupox.turma913.ifalara.local.	  IN	A	10.9.13.100
+www.grupox.turma913.ifalara.local.	  IN 	A	10.9.13.1   
+bd.grupox.turma913.ifalara.local.	  IN 	A	10.9.13.1    
+samba.grupox.turma913.ifalara.local.	  IN 	A	10.9.13.1    
+
 ```
