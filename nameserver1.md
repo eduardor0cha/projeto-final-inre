@@ -176,3 +176,38 @@ RESOLVCONF=no
 # startup options for the server
 OPTIONS="-4 -u bind"
 ```
+* Após habilitar novamente o bind9, configure o dns nas respectivas formas ns1 e ns2.
+
+```bash
+                nameservers: 
+                addresses:
+                - 10.9.13.1
+                - 10.9.13.1
+                search: [grupox.turma913.ifalara.local]
+ ```
+ 
+ * Edite o arquivo de configuração do netplan pelo comando:
+ * 
+ ```bash
+    $ sudo nano /etc/netplan/50-cloud-init.yaml 
+ ```
+ 
+ _Configure o arquivo, de modo a se assemelhar com o seguinte, modificando os devidos endereços:_
+ 
+  ```bash
+    network:
+    ethernets:
+        enp0s3:                        # interface local
+            addresses: [10.9.14.10/24]  # ip/mascara
+            gateway4: 10.9.14.1         # ip do gateway
+            dhcp4: false               # 'false' para conf. estatica 
+            nameservers:               # servidores dns
+                addresses:
+                - 10.9.14.10            # ip do ns1
+                - 10.9.14.11            # ip do ns2
+                search: [grupox.turma913.ifalara.local] # domínio
+    version: 2
+ ```
+ 
+
+ 
