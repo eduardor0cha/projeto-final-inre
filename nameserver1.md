@@ -77,3 +77,9 @@ bd.grupox.turma913.ifalara.local.	  IN 	A	10.9.13.1
 samba.grupox.turma913.ifalara.local.	  IN 	A	10.9.13.1    
 
 ```
+
+* Configure a zona inversa, atentando-se aos mesmos detalhes, utilizando o seguinte comando:
+
+```bash
+    $ sudo nano db.10.9.13.rev
+```
