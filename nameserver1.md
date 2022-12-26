@@ -18,4 +18,15 @@ Antes de continuar, certifique-se de ter cumprido os passos descritos no arquivo
  $ sudo systemctl status bind9
 ```
 
+* Para o armazenamento das zonas, utilize o seguinte comando para criar o diretório em questão:
+
+```bash
+ $ sudo mkdir /etc/bind/zones
+```
+
+* Crie a zona direta, modificiando o domínio grupox.turma913.ifalara.local de acordo com o grupo pertencente:
+
+```bash
+ $ $ sudo cp /etc/bind/db.empty /etc/bind/zones/db.grupox.turma913.ifalara.local
+```
 
