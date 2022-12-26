@@ -35,6 +35,13 @@ Antes de continuar, certifique-se de ter cumprido os passos descritos no arquivo
 * Realize a criação da zona reversa, inserindo a zona reversa da rede 10.9.13: 
 
 ```bash
- $   $ sudo cp /etc/bind/db.127 /etc/bind/zones/db.10.9.13.rev
+ $ sudo cp /etc/bind/db.127 /etc/bind/zones/db.10.9.13.rev
 ```
 
+## Configuração das zonas
+
+* Configure a zona direta db.grupox.turma913.ifalara.local , de acordo com as informações do seu domínio:
+
+```bash
+    $ sudo nano db.labredes.ifalarapiraca.local 
+```
