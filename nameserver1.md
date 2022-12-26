@@ -86,11 +86,11 @@ samba.grupox.turma913.ifalara.local.	  IN 	A	10.9.13.1
 
 ```
 ;
-; BIND reverse data file of reverse zone for local area network 10.9.14.0/24
+; BIND reverse data file of reverse zone for local area network 10.9.13.0/24
 ;
 $TTL    604800
 @       IN      SOA     grupox.turma913.ifalara.local. root.grupox.turma913.ifalara.local. (
-                              2022122900         ; Serial
+                              2022122600         ; Serial
                          604800         ; Refresh
                           86400         ; Retry
                         2419200         ; Expire
@@ -135,7 +135,7 @@ zone "grupo3.turma913.ifalara.local" {
 zone "13.9.10.in-addr.arpa" IN {
 	type master;
 	file "/etc/bind/zones/db.10.9.13.rev";
-	allow-transfer{ 10.9.14.112; };
+	allow-transfer{ 10.9.13.112; };
 };
 
 ```
