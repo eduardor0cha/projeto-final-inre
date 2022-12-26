@@ -29,6 +29,12 @@ Antes de continuar, certifique-se de ter cumprido os passos descritos no arquivo
 * Crie a zona direta, modificiando o domínio grupox.turma913.ifalara.local de acordo com o grupo pertencente:
 
 ```bash
- $ $ sudo cp /etc/bind/db.empty /etc/bind/zones/db.grupox.turma913.ifalara.local
+ $ sudo cp /etc/bind/db.empty /etc/bind/zones/db.grupox.turma913.ifalara.local
+```
+
+* Realize a criação da zona reversa, inserindo a zona reversa da rede 10.9.13: 
+
+```bash
+ $   $ sudo cp /etc/bind/db.127 /etc/bind/zones/db.10.9.13.rev
 ```
 
