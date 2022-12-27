@@ -22,7 +22,7 @@ $ sudo systemctl enable bind9
 ```
  
 ## Configuração de zonas
-Edite o arquivo:
+Edite o arquivo `/etc/bind/named.conf.local` para definir as zonas:
 
 ```
 $ sudo nano /etc/bind/named.conf.local
