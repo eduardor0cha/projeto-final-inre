@@ -49,7 +49,7 @@ Antes de continuar, certifique-se de ter cumprido os passos descritos no arquivo
 * Configure a zona direta db.grupox.turma913.ifalara.local , de acordo com as informações do seu domínio:
 
 ```bash
-    $ sudo nano db.labredes.ifalarapiraca.local 
+    $ sudo nano grupox.turma913.ifalara.local
 ```
 
 * A configuração deve se assemelhar com o seguinte formato, fazendo valer as respectivas mudanças e inserções de cada domínio:
