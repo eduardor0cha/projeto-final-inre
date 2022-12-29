@@ -231,7 +231,7 @@ OPTIONS="-4 -u bind"
  ```
  
   ```bash
-    $ $ dig -x 10.9.13.112
+    $ dig -x 10.9.13.112
  ```
 _Neste caso, o dig está sendo direcionado para o NS2._
 
