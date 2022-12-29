@@ -49,6 +49,8 @@ _Atente-se às configurações realizadas na instalação do ns1 - Master. Não 
 ### Cheque se não há erros de sintaxe.
 Se após o seguinte comando não houver retorno, parabéns! Você concluiu a instalação do ns2.
 
+_Continuar_
+
 ```bash
 $ sudo named-checkconf
 ```
