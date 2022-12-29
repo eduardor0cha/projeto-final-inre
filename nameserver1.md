@@ -186,8 +186,8 @@ OPTIONS="-4 -u bind"
 ```bash
                 nameservers: 
                 addresses:
-                - 10.9.13.1
-                - 10.9.13.1
+                - 10.9.13.110
+                - 10.9.13.112
                 search: [grupo3.turma913.ifalara.local]
  ```
  
@@ -197,7 +197,7 @@ OPTIONS="-4 -u bind"
     $ sudo nano /etc/netplan/50-cloud-init.yaml 
  ```
  
- _Configure o arquivo, de modo a se assemelhar com o seguinte, modificando os devidos endereços:_
+ _Configure o arquivo, de modo a se assemelhar com o seguinte, modificando os devidos endereços ns1 e ns2 de acordo com o ens160:_
  
   ```bash
     network:
@@ -208,8 +208,8 @@ OPTIONS="-4 -u bind"
             dhcp4: false               # 'false' para conf. estatica 
             nameservers:               # servidores dns
                 addresses:
-                - 10.9.13.10            # ip do ns1
-                - 10.9.13.11            # ip do ns2
+                - 10.9.13.110            # ip do ns1
+                - 10.9.13.112            # ip do ns2
                 search: [grupo3.turma913.ifalara.local] # domínio
     version: 2
  ```
