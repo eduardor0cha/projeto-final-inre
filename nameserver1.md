@@ -28,10 +28,10 @@ Antes de continuar, certifique-se de ter cumprido os passos descritos no arquivo
 
 ### Criação das zonas
 
-* Crie a zona direta, modificiando o domínio grupox.turma913.ifalara.local de acordo com o grupo pertencente:
+* Crie a zona direta, modificiando o domínio grupo3.turma913.ifalara.local de acordo com o grupo pertencente:
 
 ```bash
- $ sudo cp /etc/bind/db.empty /etc/bind/zones/db.grupox.turma913.ifalara.local
+ $ sudo cp /etc/bind/db.empty /etc/bind/zones/db.grupo3.turma913.ifalara.local
 ```
 
 
@@ -46,37 +46,37 @@ Antes de continuar, certifique-se de ter cumprido os passos descritos no arquivo
 
 ### Configuração das zonas
 
-* Configure a zona direta db.grupox.turma913.ifalara.local , de acordo com as informações do seu domínio:
+* Configure a zona direta db.grupo3.turma913.ifalara.local , de acordo com as informações do seu domínio:
 
 ```bash
-    $ sudo nano grupox.turma913.ifalara.local
+    $ sudo nano grupo3.turma913.ifalara.local
 ```
 
 * A configuração deve se assemelhar com o seguinte formato, fazendo valer as respectivas mudanças e inserções de cada domínio:
-_Certifique-se de alterar o valor de serial para a data no formato ano-mês-dia, acrescida de dois dígitos 0 no final, além de mudar os endereços e os nomes de acordo com cada valor correspondente ao ENS160._
+_Certifique-se de alterar o valor de serial para a data no formato ano-mês-dia, acrescida de dois dígitos 0 no final, além de mudar os endereços e os nomes de acordo com cada valor correspondente ao ENS160. Atente-se ao fato de que a data, na checagem, deve sempre estar atualizada._
 
 ```
 ;
 ; BIND data file for internal network
 ;
-$ORIGIN grupox.turma913.ifalara.local.
+$ORIGIN grupo3.turma913.ifalara.local.
 $TTL	3h
-@	IN	SOA	ns1.grupox.turma913.ifalara.local. root.grupox.turma913.ifalara.local. (
+@	IN	SOA	ns1.grupo3.turma913.ifalara.local. root.grupo3.turma913.ifalara.local. (
 			      2022122600	; Serial
 			      3h	; Refresh
 			      1h	; Retry
 			      1w	; Expire
 			      1h )	; Negative Cache TTL
 ;nameservers
-@	IN	NS	ns1.grupox.turma913.ifalara.local.
-@	IN	NS	ns2.grupox.turma913.ifalara.local.
+@	IN	NS	ns1.grupo3.turma913.ifalara.local.
+@	IN	NS	ns2.grupo3.turma913.ifalara.local.
 ;hosts
-ns1.grupox.turma913.ifalara.local.	  IN	A	10.9.13.10
-ns2.grupox.turma913.ifalara.local.	  IN	A	10.9.13.11
-gw.grupox.turma913.ifalara.local.	  IN	A	10.9.13.100
-www.grupox.turma913.ifalara.local.	  IN 	A	10.9.13.1   
-bd.grupox.turma913.ifalara.local.	  IN 	A	10.9.13.1    
-samba.grupox.turma913.ifalara.local.	  IN 	A	10.9.13.1    
+ns1.grupox.turma913.ifalara.local.	  IN	A	10.9.13.110
+ns2.grupox.turma913.ifalara.local.	  IN	A	10.9.13.112
+gw.grupox.turma913.ifalara.local.	  IN	A	10.9.13.106
+www.grupox.turma913.ifalara.local.	  IN 	A	10.9.13.215
+bd.grupox.turma913.ifalara.local.	  IN 	A	10.9.13.216   
+samba.grupox.turma913.ifalara.local.	  IN 	A	10.9.13.108
 
 ```
 
@@ -91,7 +91,7 @@ samba.grupox.turma913.ifalara.local.	  IN 	A	10.9.13.1
 ; BIND reverse data file of reverse zone for local area network 10.9.13.0/24
 ;
 $TTL    604800
-@       IN      SOA     grupox.turma913.ifalara.local. root.grupox.turma913.ifalara.local. (
+@       IN      SOA     grupo3.turma913.ifalara.local. root.grupo3.turma913.ifalara.local. (
                               2022122600         ; Serial
                          604800         ; Refresh
                           86400         ; Retry
@@ -99,14 +99,16 @@ $TTL    604800
                          604800 )       ; Negative Cache TTL
 
 ; name servers
-@      IN      NS      ns1.grupox.turma913.ifalara.local.
-@      IN      NS      ns2.grupox.turma913.ifalara.local.
+@      IN      NS      ns1.grupo3.turma913.ifalara.local.
+@      IN      NS      ns2.grupo3.turma913.ifalara.local.
 
 ; PTR Records
-10   IN      PTR     ns1.grupox.turma913.ifalara.local.              ; 10.9.13.10
-11   IN      PTR     ns2.grupox.turma913.ifalara.local.              ; 10.9.13.11
-100  IN      PTR     dh1.grupox.turma913.ifalara.local.    	     ; 10.9.13.100
-1    IN      PTR     gw.grupox.turma913.ifalara.local.               ; 10.9.13.1
+110   IN      PTR     ns1.grupo3.turma913.ifalara.local.              ; 10.9.13.110
+112   IN      PTR     ns2.grupo3.turma913.ifalara.local.              ; 10.9.13.112
+106   IN      PTR     gw.grupo3.turma913.ifalara.local.    	      ; 10.9.13.106
+215   IN      PTR     www.grupo3.turma913.ifalara.local.              ; 10.9.13.215
+216   IN      PTR     bd.grupo3.turma913.ifalara.local.               ; 10.9.13.216
+108   IN      PTR     samba.grupo3.turma913.ifalara.local.            ; 10.9.13.108
 ```
 
 ---
@@ -117,7 +119,7 @@ $TTL    604800
     $ sudo nano /etc/bind/named.conf.local
 ```
 _Adicione as duas zonas, e edite-as de acordo com os domínios dispostos, como no exemplo a seguir:_
-
+_O allow-transfer permite a conexão direta entre o DNS Master (DNS1) e DNS Slave. O transfer permite a conexão, onde se localiza o IP do NS2._
 ```
 //
 // Do any local configuration here
@@ -147,6 +149,7 @@ zone "13.9.10.in-addr.arpa" IN {
 ## Checagem 
 
 *  Uma vez editados, cheque, agora, a sintaxe cada um dos arquivos, através, respectivamente, dos seguintes comandos:
+_Com tais comandos, vocẽ poderá rever as alterações feitas em cada uma das zonas._
 
 ```bash
     $sudo named-checkconf
@@ -155,8 +158,8 @@ zone "13.9.10.in-addr.arpa" IN {
 ```bash
     $ cd /etc/bind/zones
     
-$ sudo named-checkzone grupox.turma913.ifalara.local db.grupox.turma913.ifalara.local
-zone grupox.turma913.ifalara.local/IN: loaded serial 1
+$ sudo named-checkzone grupox.turma913.ifalara.local db.grupo3.turma913.ifalara.local
+zone grupo3.turma913.ifalara.local/IN: loaded serial 1
 
 $ sudo named-checkzone 13.9.10.in-addr.arpa db.10.9.13.rev
 zone 13.9.10.in-addr.arpa/IN: loaded serial 1
@@ -185,7 +188,7 @@ OPTIONS="-4 -u bind"
                 addresses:
                 - 10.9.13.1
                 - 10.9.13.1
-                search: [grupox.turma913.ifalara.local]
+                search: [grupo3.turma913.ifalara.local]
  ```
  
  * Edite o arquivo de configuração do netplan pelo comando:
@@ -200,14 +203,14 @@ OPTIONS="-4 -u bind"
     network:
     ethernets:
         enp0s3:                        # interface local
-            addresses: [10.9.14.10/24]  # ip/mascara
-            gateway4: 10.9.14.1         # ip do gateway
+            addresses: [10.9.13.10/24]  # ip/mascara
+            gateway4: 10.9.13.1         # ip do gateway
             dhcp4: false               # 'false' para conf. estatica 
             nameservers:               # servidores dns
                 addresses:
-                - 10.9.14.10            # ip do ns1
-                - 10.9.14.11            # ip do ns2
-                search: [grupox.turma913.ifalara.local] # domínio
+                - 10.9.13.10            # ip do ns1
+                - 10.9.13.11            # ip do ns2
+                search: [grupo3.turma913.ifalara.local] # domínio
     version: 2
  ```
 
@@ -224,7 +227,7 @@ OPTIONS="-4 -u bind"
  * Se corretos, realize, por fim, o comando dig para as máquinas e os endereços respectivos do NS1 e NS2, como nos comandos a seguir:
  
  ```bash
-    $ dig ns1.grupox.turma913.ifalara.local
+    $ dig ns1.grupo3.turma913.ifalara.local
  ```
  
   ```bash
