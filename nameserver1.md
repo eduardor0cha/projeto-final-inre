@@ -149,7 +149,7 @@ zone "13.9.10.in-addr.arpa" IN {
 ## Checagem 
 
 *  Uma vez editados, cheque, agora, a sintaxe cada um dos arquivos, através, respectivamente, dos seguintes comandos:
-_Com tais comandos, vocẽ poderá rever as alterações feitas em cada uma das zonas._
+_Com tais comandos, você poderá rever as alterações feitas em cada uma das zonas._
 
 ```bash
     $sudo named-checkconf
