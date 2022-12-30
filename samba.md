@@ -308,6 +308,17 @@ Antes de continuar, certifique-se de ter cumprido os passos descritos no arquivo
    sudo chmod -R 0775 /samba/public
    sudo chgrp sambashare /samba/public
     ```
+   Cheque se as permissões foram atualizadas:
+   ```bash
+    $ getent group | grep sambashare
+    sambashare:x:119:aluno
+    $ ls -la
+    total 12
+    drwxr-xr-x  3 root   root       4096 Dec 21 20:39 .
+    drwxr-xr-x 20 root   root       4096 Dec 21 20:39 ..
+    drwxrwxr-x  2 nobody sambashare 4096 Dec 22 14:47 public
+   ```
+    
 6. ### Acessar a pasta compartilhada:
     Em um computador Windows abra o Explorador de arquivos, clique com o botão direito em "Mapear unidade"e digite: `\\<ip-da-vm-samba-ens160>\public` ;
     Exemplo: `\\10.9.13.106\public`.
