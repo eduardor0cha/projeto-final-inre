@@ -1,6 +1,8 @@
 # Projeto Final da Disciplina de Serviço de Redes
 
-Antes de executar os passos desse tutorial, atente-se a fazer todos os passos desse arquivo (README.md) em todas as máquinas que participarão da rede. As configurações específicas para cada máquina ficarão em arquivos separados, e esses estarão linkados ao final dessa página.
+Este passo a passo tem como objetivo mostrar como configurar uma rede, de forma que sejam empregadas funções a cada máquina, assim, estabelecendo uma rede com serviços DNS e SAMBA, e possuindo um gateway que protegerá as máquinas alocadas dentro da rede.
+
+> Antes de executar os passos desse tutorial, atente-se a fazer todos os passos desse arquivo (README.md) em todas as máquinas que participarão da rede. As configurações específicas para cada máquina ficarão em arquivos separados, e esses estarão linkados ao final dessa página.
 
 ---
 
@@ -74,31 +76,118 @@ network:
   version: 2
 ```
 
-- Exemplo:
+- Em nossa rede, ficou dessa forma:
 
-> ```
-> # This is the network config written by 'subiquity'
-> network:
->   renderer: networkd
->   ethernets:
->     ens160:
->       dhcp4: false
->       addresses: [10.9.13.106/24]
->       gateway4: 10.9.13.1
->       nameservers:
->          addresses: [10.9.13.110, 10.9.13.112]
->          search: [grupo3.turma913.ifalara.local]
->     ens192:
->       dhcp4: false
->       addresses: [192.168.13.41/28]
->       #gateway4:
->       #nameservers:
->       #   addresses:
->       #     -
->       #     -
->       #   search: []
->   version: 2
-> ```
+  - Gateway:
+
+  > ```
+  > # This is the network config written by 'subiquity'
+  > network:
+  >   renderer: networkd
+  >   ethernets:
+  >     ens160:
+  >       dhcp4: false
+  >       addresses: [10.9.13.106/24]
+  >       gateway4: 10.9.13.1 
+  >       nameservers:
+  >          addresses: [10.9.13.110, 10.9.13.112]
+  >          search: [grupo3.turma913.ifalara.local]
+  >     ens192:
+  >       dhcp4: false
+  >       addresses: [192.168.13.41/28]
+  >       #gateway4: 
+  >       #nameservers:
+  >       #   addresses:
+  >       #     - 
+  >       #     - 
+  >       #   search: []
+  >   version: 2
+  > ```
+
+  - SAMBA:
+
+  > ```
+  > # This is the network config written by 'subiquity'
+  > network:
+  >   renderer: networkd
+  >   ethernets:
+  >     ens160:
+  >       dhcp4: false
+  >       addresses: [10.9.13.108/24]
+  >       nameservers:
+  >         addresses:
+  >           - 10.9.13.110 
+  >           - 10.9.13.112
+  >         search: [grupo3.turma913.ifalara.local]
+  >     ens192:
+  >       dhcp4: false
+  >       addresses: [192.168.13.42/28]
+  >       gateway4: 192.168.13.41
+  >       nameservers:
+  >         addresses:
+  >           - 192.168.13.43
+  >           - 192.168.13.44
+  >         search: [grupo3.turma913.ifalara.local]
+  >   version: 2
+  > ```
+
+  - Nameserver 1:
+
+  > ```
+  > # This is the network config written by 'subiquity'
+  > network:
+  >   renderer: networkd
+  >   ethernets:
+  >     ens160:
+  >       dhcp4: false
+  >       addresses: [10.9.13.110/24]
+  >     # gateway4: 10.9.13.1 
+  >       nameservers:
+  >         addresses:
+  >           - 10.9.13.110 
+  >           - 10.9.13.112
+  >         search: [grupo3.turma913.ifalara.local]
+  > 
+  >     ens192:
+  >       dhcp4: false
+  >       addresses: [192.168.13.43/28]
+  >       gateway4: 192.168.13.41
+  >       nameservers:
+  >         addresses:
+  >           - 192.168.13.43
+  >           - 192.168.13.44
+  >         search: [grupo3.turma913.ifalara.local]
+  >   version: 2
+  > ```
+
+  - Nameserver 2:
+
+  > ```
+  > # This is the network config written by 'subiquity'
+  > network:
+  >   renderer: networkd
+  >   ethernets:
+  >     ens160:
+  >       dhcp4: false
+  >       addresses: [10.9.13.112/24]
+  >       gateway4: 10.9.13.1 
+  >       nameservers:
+  >         addresses:
+  >           - 10.9.13.110 
+  >           - 10.9.13.112
+  >         search: [grupo3.turma913.ifalara.local]
+  > 
+  >     ens192:
+  >       dhcp4: false
+  >       addresses: [192.168.13.44/28]
+  >       #gateway4: 
+  >       #nameservers:
+  >       #   addresses:
+  >       #     - 
+  >       #     - 
+  >       #   search: []
+  >   version: 2
+  > ```
 
 Uma vez editado o arquivo, salve e aplique as mudanças:
 

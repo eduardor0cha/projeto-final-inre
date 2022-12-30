@@ -41,7 +41,7 @@ O primeiro passo para a configuração, é habilitar o firewall.
 4. Agora, habilite o encaminhamento de pacotes, editando o arquivo `sysctl.conf` localizado na pasta `/etc/ufw` e descomente a linha **`net/ipv4/ip_forward=1`**:
 
    ```bash
-   sudo nano /etc/ufw/systcl.conf
+   sudo nano /etc/ufw/sysctl.conf
    ```
 
 ---
