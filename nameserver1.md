@@ -239,4 +239,4 @@ _Neste caso, o dig está sendo direcionado para o NS2._
 
 Pronto! Você concluiu a instalação e configuração do DNS Master. Além dos comandos acima, o comando ping, aliado ao endereço ou ao nome da máquina desejada, é uma das formas de garantir que sua configuração do DNS Master esa correta. Destarte, o comando deverá ser atendido da seguinte forma:
 
-![](img/Captura de tela de 2022-12-30 09-30-55.png)
+![](img/print.png)
